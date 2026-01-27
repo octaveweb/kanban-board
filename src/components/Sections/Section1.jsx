@@ -2,28 +2,34 @@ import React from 'react'
 
 const Section1 = () => {
     return (
-        <section className='section1'>
-            <div className="board">
-                <div className="task-column">
-                    <div className="hedding">
-                        <div className="left">Task Coloumn name</div>
-                        <div className="right">Count</div>
+        <section>
+            <div class="board">
+                <div class="column">
+                    <div class="column-header">
+                        Task Column name<br />
+                        Count
                     </div>
+                    <div class="column-body"></div>
                 </div>
-                <div className="task-column">
-                    <div className="hedding">
-                        <div className="left">Task Coloumn name</div>
-                        <div className="right">Count</div>
+
+                <div class="column">
+                    <div class="column-header">
+                        Task Column name<br />
+                        Count
                     </div>
+                    <div class="column-body"></div>
                 </div>
-                <div className="task-column">
-                    <div className="hedding">
-                        <div className="left">Task Coloumn name</div>
-                        <div className="right">Count</div>
+
+                <div class="column">
+                    <div class="column-header">
+                        Task Column name<br />
+                        Count
                     </div>
+                    <div class="column-body"></div>
                 </div>
             </div>
         </section>
+
     )
 }
 
