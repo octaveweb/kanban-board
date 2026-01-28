@@ -6,24 +6,24 @@ const Section1 = () => {
             <div class="board">
                 <div class="column">
                     <div class="column-header">
-                        Task Column name<br />
-                        Count
+                      <p>TODO</p>
+                        <p>Count</p>
                     </div>
                     <div class="column-body"></div>
                 </div>
 
                 <div class="column">
                     <div class="column-header">
-                        Task Column name<br />
-                        Count
+                        <p>Progress</p>
+                        <p>Count</p>
                     </div>
                     <div class="column-body"></div>
                 </div>
 
                 <div class="column">
                     <div class="column-header">
-                        Task Column name<br />
-                        Count
+                        <p>Done</p>
+                        <p>Count</p>
                     </div>
                     <div class="column-body"></div>
                 </div>
