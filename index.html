@@ -1,13 +1,69 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>kanban-board</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>kanban-board-v-js</title>
+</head>
+
+<body>
+  <main>
+    <nav>
+      <h2>Kanban Board</h2>
+      <button class='btn' id="togle-modal">Add Task</button>
+    </nav>
+    <section>
+      <div class="board">
+        <div class="column" id="todo">
+          <div class="column-header">
+            <p>TODO</p>
+            <p>Count</p>
+          </div>
+          <div class="task " draggable="true">
+            <p class="task-title">Home Work</p>
+            <p class="task-dec">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+            </p>
+            <div class="btn-contener">
+              <div class="btn">Edit</div>
+              <div class="btn">Delete</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column" id="progress">
+          <div class="column-header">
+            <p>In Progress</p>
+            <p>Count</p>
+          </div>
+
+        </div>
+
+             <div class="column" id="done">
+          <div class="column-header">
+            <p>Done</p>
+            <p>Count</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="modal add-new-task" id="modal">
+    <div class="bg"></div>
+     <div class="center">
+       <input type="text" id="title" placeholder="Enter titel">
+      <textarea id="decription" cols="50" rows="6" placeholder="Enter decription"></textarea>
+      <div id="modal-button">
+        <div class="btn" id="add-task-btn">Add Task</div>
+      </div>
+     </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>

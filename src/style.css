@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Momo+Signature&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #000;
+  --primary-text-color: #fafafa;
+  --bg-food-color: #cb2929;
+  --bg-column-color: #333;
+  --bg-button-color: #121212;
+  --task-color: #111;
+  /* Spacing scale */
+  --space-2xs: .125rem;
+  --space-xs: .25rem;
+  --space-sm: .5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 2.5rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+  /* Border radius */
+  --border-radius-xs: .25rem;
+  --border-radius-sm: .5rem;
+  --border-radius-md: 1rem;
+  --border-radius-lg: 1.5rem;
+  --border-radius-xl: 2rem;
+  --border-radius-2xl: 2.5rem;
+  --border-radius-3xl: 4rem;
+  --border-radius-round: 999px;
+  /* Fonts */
+  --font-primary: "Nunito Sans", sans-serif;
+  --font-secondery: "Ubuntu", sans-serif;
+  --font-titel: "Archivo Black", sans-serif;
+  --font-mono: "Momo Signature", cursive;
+  /* Shadows */
+  --shadow-xs: 0 1px 2px #00000026;
+  --shadow-sm: 0 2px 6px #00000033;
+  --shadow-md: 0 6px 20px #00000040;
+  --shadow-lg: 0 12px 40px #00000059;
+  /* Z-index layers */
+  --z-base: 1;
+  --z-dropdown: 10;
+  --z-sticky: 50;
+  --z-modal: 100;
+  --z-toast: 999;
+  /* Container widths */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  /* Block spacing */
+  --block-xs: 1.5rem;
+  --block-sm: 2rem;
+  --block-md: 3rem;
+  --block-lg: 4rem;
+  /* Font sizes */
+  --fs-2xs: 0.625rem;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.25rem;
+  --fs-2xl: 1.5rem;
+  --fs-3xl: 2rem;
+  --fs-4xl: 2.5rem;
+  --fs-5xl: 3rem;
+  /* Transitions */
+  --animation-primary: all .25s cubic-bezier(.7, 0, .3, 1);
+  --animation-fast: all .3s cubic-bezier(.7, 0, .3, 1);
+  --animation-smooth: all .7s cubic-bezier(.7, 0, .3, 1);
+  --animation-slow: all .9s cubic-bezier(.7, 0, .3, 1);
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: var(--bg-color);
+  color: var(--primary-text-color);
+  font-family: var(--font-primary);
+}
+
+.btn {
+  font-size: var(--font-xl);
+  font-weight: 400;
+  border-radius: var(--border-radius-xs);
+  padding: var(--space-sm) calc(var(--space-sm) * 1.5);
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.7, 0, 0.3, 1);
+  background-color: var(--bg-button-color);
+  color: var(--primary-text-color);
+  border: none;
+  outline: none;
+}
+.btn:active {
+  scale: 0.91;
+}
+.btn::-moz-selection {
+  background-color: transparent;
+}
+.btn::selection {
+  background-color: transparent;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-xl) var(--space-xl) var(--space-sm);
+}
+
+section {
+  height: 100%;
+  display: flex;
+  flex-grow: 1;
+  padding: 1rem var(--space-xl);
+}
+
+.board {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+.board .column {
+  background-color: var(--bg-column-color);
+  border-radius: var(--border-radius-sm);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  transition: var(--animation-fast);
+  border: 2px dashed transparent;
+}
+.board .column .column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.board .task {
+  cursor: grab;
+  padding: var(--space-md);
+  background-color: var(--task-color);
+  border-radius: var(--border-radius-sm);
+}
+.board .task .task-title {
+  font-size: var(--fs-xl);
+  font-size: 200;
+}
+.board .task .task-dec {
+  font-size: var(--fs-md);
+  font-weight: 100;
+  padding: var(--space-sm) 0;
+}
+.board .task .btn-contener {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: 0.25rem;
+}
+.board .task .btn-contener .btn {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.board .task .btn-contener .btn:nth-child(1) {
+  background-color: blue;
+}
+.board .task .btn-contener .btn:nth-child(2) {
+  background-color: red;
+}
+
+.column.hover-over {
+  border: 2px dashed var(--primary-text-color);
+  scale: 1.03;
+}
+
+.modal {
+  height: 100vh;
+  width: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2705882353);
+  -webkit-backdrop-filter: blur(7px);
+          backdrop-filter: blur(7px);
+}
+.modal .bg {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  background-color: transparent;
+}
+.modal .center {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
+  gap: var(--space-sm);
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(7px);
+          backdrop-filter: blur(7px);
+  padding: var(--space-md);
+  border-radius: var(--border-radius-sm);
+  font-family: var(--font-secondery);
+  border: 1px solid rgba(255, 255, 255, 0.3490196078);
+}
+.modal .center input {
+  height: var(--space-2xl);
+  padding: var(--space-sm);
+  width: 100%;
+  font-size: var(--fs-md);
+  border-radius: var(--border-radius-xs);
+  border: none;
+  outline: none;
+  background-color: #252525;
+  color: #ffffff;
+}
+.modal .center input:focus {
+  outline: 1px solid rgba(255, 255, 255, 0.2196078431);
+}
+.modal .center textarea {
+  background-color: #252525;
+  color: var(--primary-text-color);
+  font-size: var(--fs-md);
+  width: 100%;
+  padding: var(--space-sm);
+  border-radius: var(--border-radius-xs);
+  border: none;
+  outline: none;
+}
+.modal .center textarea:focus {
+  outline: 1px solid rgba(255, 255, 255, 0.2196078431);
+}
+.modal .center .btn {
+  text-align: center;
+  padding: var(--space-md) 0;
+  margin-top: var(--space-xs);
+  background-color: #091dbc;
+}
+.modal .center .btn:active {
+  scale: 0.98;
+  opacity: 90%;
+}
+
+.modal.active {
+  display: flex;
+}/*# sourceMappingURL=style.css.map */
