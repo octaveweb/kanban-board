@@ -18,7 +18,7 @@
         <div class="column" id="todo">
           <div class="column-header">
             <p>TODO</p>
-            <p>Count</p>
+            <p>Count: <span class="todo-count">0</span></p>
           </div>
           <div class="task " draggable="true">
             <p class="task-title">Home Work</p>
@@ -26,8 +26,8 @@
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
             </p>
             <div class="btn-contener">
-              <div class="btn">Edit</div>
-              <div class="btn">Delete</div>
+             <button class="btn">Edit</button>
+              <button class="btn">Delete</button>
             </div>
           </div>
         </div>
@@ -55,10 +55,10 @@
   <div class="modal add-new-task" id="modal">
     <div class="bg"></div>
      <div class="center">
-       <input type="text" id="title" placeholder="Enter titel">
+       <input type="text" id="title" placeholder="Enter titel" required>
       <textarea id="decription" cols="50" rows="6" placeholder="Enter decription"></textarea>
       <div id="modal-button">
-        <div class="btn" id="add-task-btn">Add Task</div>
+        <button class="btn" id="add-task-btn">Add Task</button>
       </div>
      </div>
   </div>

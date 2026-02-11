@@ -249,8 +249,9 @@ section {
   outline: 1px solid rgba(255, 255, 255, 0.2196078431);
 }
 .modal .center .btn {
+  width: 100%;
   text-align: center;
-  padding: var(--space-md) 0;
+  padding: var(--space-md) var(--space-xl);
   margin-top: var(--space-xs);
   background-color: #091dbc;
 }

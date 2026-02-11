@@ -308,8 +308,9 @@ section {
         }
 
         .btn {
+            width: 100%;
             text-align: center;
-            padding: var(--space-md) 0;
+            padding: var(--space-md) var(--space-xl);
             margin-top: var(--space-xs);
             background-color: #091dbc;
 
