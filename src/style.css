@@ -262,4 +262,13 @@ section {
 
 .modal.active {
   display: flex;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 900px) {
+  section {
+    padding: var(--space-md);
+  }
+  .board {
+    grid-template-columns: 1fr;
+  }
 }/*# sourceMappingURL=style.css.map */
