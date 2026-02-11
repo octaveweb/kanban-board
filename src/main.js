@@ -25,11 +25,24 @@ function saveToLocalStorage() {
 
 function updateData() {
   columns.forEach(col => {
-    taskData[col.id] = Array.from(col.querySelectorAll(".task")).map(t => ({
+    taskData[col.id] = Array.from(
+      col.querySelectorAll(".task")
+    ).map(t => ({
       title: t.querySelector(".task-title").innerText,
       desc: t.querySelector(".task-dec").innerText
     }))
   })
+}
+
+function updateCount() {
+  document.querySelector(".todo-count").innerText =
+    todo.querySelectorAll(".task").length
+
+  document.querySelector(".progress-count").innerText =
+    progress.querySelectorAll(".task").length
+
+  document.querySelector(".done-count").innerText =
+    done.querySelectorAll(".task").length
 }
 
 function createTaskElement(title, desc) {
@@ -55,6 +68,7 @@ function createTaskElement(title, desc) {
     task.remove()
     updateData()
     saveToLocalStorage()
+    updateCount()
   })
 
   task.querySelector(".edit").addEventListener("click", () => {
@@ -76,13 +90,21 @@ function createTaskElement(title, desc) {
 }
 
 function loadTasks() {
+
   columns.forEach(col => {
+
+    const header = col.querySelector(".column-header")
+
     col.innerHTML = ""
+    col.appendChild(header)
+
     taskData[col.id].forEach(t => {
       const task = createTaskElement(t.title, t.desc)
       col.appendChild(task)
     })
   })
+
+  updateCount()
 }
 
 columns.forEach(column => {
@@ -106,6 +128,7 @@ columns.forEach(column => {
     column.classList.remove("hover-over")
     updateData()
     saveToLocalStorage()
+    updateCount()
   })
 
 })
@@ -144,6 +167,7 @@ addTaskButton.addEventListener("click", () => {
 
   updateData()
   saveToLocalStorage()
+  updateCount()
 
   resetModal()
 })
